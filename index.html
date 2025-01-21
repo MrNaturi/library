@@ -8,24 +8,24 @@
 </head>
 <body>
     
-<p id="library"></p>
+<div id="library"></div>
 <dialog id="dialog">
     <form method="dialog">
         <div>
             <h1>Add a New Book</h1>
             <button value="cancel" formmethod="dialog">Cancel</button>
         </div>
-        <label for="read" name="author">Author</label>
-        <input id="author" type="text" />
+        <label for="author" name="author">Author</label>
+        <input id="author" type="text" required/>
     
         <label for="Title" name="Title">Title</label>
-        <input id="Title" type="text" />
+        <input id="Title" type="text" required/>
     
         <label for="pagenumber" name="pagenumber">Number of pages</label>
-        <input id="pagenumber" type="text" />
+        <input id="pagenumber" type="text" required/>
     
         <label for="read-status">Read or Not</label>
-        <select id="read-status" name="read-status">
+        <select id="read-status" name="read-status" required>
             <option value="read">Read</option>
             <option value="not-read">Not read</option>
         </select>
@@ -39,7 +39,7 @@
 <div id="newbookform"></div>
 
 
-    <script src="script.js"/>
+    <script src="script.js" defer/>
 </body>
 </html>
 
