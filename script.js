@@ -1,6 +1,5 @@
 const library = document.getElementById("library")
 const newBkBtn = document.getElementById("newbook")
-const newForm = document.getElementById("newbookform")
 const dialog = document.getElementById("dialog")
 const submitBtn = document.getElementById("submitBtn")
 const selectEl = dialog.querySelector("select")
@@ -44,13 +43,14 @@ function addLibrary (){
     library.innerHTML= ""
     myLibrary.forEach((el, index) => {
         const bookDiv = document.createElement("div");
-        bookDiv.dataset.bookIndex = index;  
+        bookDiv.dataset.bookIndex = index;
+        bookDiv.dataset.class = "bookDiv";
         bookDiv.innerHTML = `
+        <button class="delete"><img src="trash-can.svg" width="48" height="48" /></button>
             <h1>${el.title}</h1>
             <p>${el.author}</p>
             <p>${el.pages}</p>
             <button class="toggleRead">${el.read}</button>
-            <button class="delete">Delete</button>
         `;
         library.appendChild(bookDiv);
     });
