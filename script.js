@@ -50,6 +50,7 @@ function addLibrary (){
             <p>${el.author}</p>
             <p>${el.pages}</p>
             <button class="toggleRead">${el.read}</button>
+            <button class="delete">Delete</button>
         `;
         library.appendChild(bookDiv);
     });
@@ -66,9 +67,17 @@ function addLibrary (){
             }
         };
     });
+       document.querySelectorAll(".delete").forEach(button => {
+        const bookDiv = button.parentElement;
+        const removeBook = bookDiv.dataset.bookIndex;
+        button.onclick =() => {
+        myLibrary.splice(removeBook, 1);
+        addLibrary();
+        }
+    })
+
 } 
-
-
+ 
 newBkBtn.onclick = () => {
     dialog.showModal();
 }
